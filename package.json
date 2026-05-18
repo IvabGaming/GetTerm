@@ -1,0 +1,26 @@
+{
+  "name": "getterm",
+  "version": "1.0.0",
+  "description": "A custom borderless neon HTML download terminal application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron-forge start"
+  },
+  "devDependencies": {
+    "electron": "^30.0.0",
+    "electron-builder": "^24.0.0"
+  },
+  "build": {
+    "appId": "com.ivann.getterm",
+    "win": {
+      "target": ["nsis"],
+      "icon": "assets/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": "always",
+      "installerIcon": "assets/icon.ico"
+    }
+  }
+}
