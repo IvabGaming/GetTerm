@@ -1,0 +1,27 @@
+name: Compile Windows Setup Installer
+on: [push]
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Project Dependencies
+        run: npm install
+
+      - name: Compile setup.exe
+        run: npx electron-builder --windows
+        
+      - name: Save Installer File
+        uses: actions/upload-artifact@v4
+        with:
+          name: GetTerm-Windows-Installer
+          path: dist/*.exe
