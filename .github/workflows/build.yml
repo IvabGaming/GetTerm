@@ -24,4 +24,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: GetTerm-Windows-Installer
-          path: dist/*.exe
+          path: dist/*.exe # Saves the compiled setup.exe from the main dist folder
