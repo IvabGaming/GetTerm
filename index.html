@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GetTerm</title>
+    <style>
+        body { background-color: #1a1a1a; color: #00ff66; font-family: monospace; padding: 20px; margin: 0; }
+        #terminal { display: flex; flex-direction: column; height: 90vh; }
+        #output { flex-grow: 1; overflow-y: auto; white-space: pre-wrap; margin-bottom: 10px; }
+        .input-area { display: flex; }
+        .prompt { color: #33ccff; margin-right: 8px; }
+        input { background: transparent; border: none; color: #00ff66; font-family: monospace; font-size: 16px; outline: none; flex-grow: 1; }
+    </style>
+</head>
+<body>
+    <div id="terminal">
+        <div id="output">System Initialized. Type: download [URL] or exit<br><br></div>
+        <div class="input-area">
+            <span class="prompt">$</span>
+            <input type="text" id="cmdInput" autofocus autocomplete="off">
+        </div>
+    </div>
+</body>
+</html>
