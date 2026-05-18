@@ -10,17 +10,17 @@
     "electron": "^30.0.0",
     "electron-builder": "^24.0.0"
   },
-  "build": {
+    "build": {
     "appId": "com.ivann.getterm",
     "win": {
       "target": ["nsis"],
-      "icon": "assets/icon.ico"
+      "icon": "assets/icon.png"  
     },
     "nsis": {
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": "always",
-      "installerIcon": "assets/icon.ico"
+      "installerIcon": "assets/icon.png" 
     }
   }
 }
