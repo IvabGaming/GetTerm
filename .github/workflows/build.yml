@@ -6,7 +6,7 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - name: Check out code
+      - name: Check out main branch
         uses: actions/checkout@v4
 
       - name: Install Node.js
@@ -15,13 +15,17 @@ jobs:
           node-version: 20
 
       - name: Install Project Dependencies
+        # Force npm to run directly in the checkout root folder
         run: npm install
+        working-directory: ${{ github.workspace }}
 
       - name: Compile setup.exe
+        # Force electron-builder to run directly in the checkout root folder
         run: npx electron-builder --windows
+        working-directory: ${{ github.workspace }}
         
       - name: Save Installer File
         uses: actions/upload-artifact@v4
         with:
           name: GetTerm-Windows-Installer
-          path: dist/*.exe # Saves the compiled setup.exe from the main dist folder
+          path: ${{ github.workspace }}/dist/*.exe
