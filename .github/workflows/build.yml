@@ -19,8 +19,8 @@ jobs:
         working-directory: ${{ github.workspace }}
 
       - name: Compile setup.exe
-        # Added --config.publish=never to bypass the token requirement entirely
-        run: npx electron-builder --windows --config.publish=never
+        # Fixes the flag to use standard space-separated syntax
+        run: npx electron-builder --windows --publish never
         working-directory: ${{ github.workspace }}
         
       - name: Save Installer File
