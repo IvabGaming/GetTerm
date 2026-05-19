@@ -15,13 +15,12 @@ jobs:
           node-version: 20
 
       - name: Install Project Dependencies
-        # Force npm to run directly in the checkout root folder
         run: npm install
         working-directory: ${{ github.workspace }}
 
       - name: Compile setup.exe
-        # Force electron-builder to run directly in the checkout root folder
-        run: npx electron-builder --windows
+        # Added --config.publish=never to bypass the token requirement entirely
+        run: npx electron-builder --windows --config.publish=never
         working-directory: ${{ github.workspace }}
         
       - name: Save Installer File
